@@ -2,6 +2,7 @@
 include("tool/functions.php");
 
 $error = "";
+$globalemail = 'example@gmail.com';
 if ($_GET["action"] == "checkIn") {
     $visitername = $_POST['visitername'];
     $visiteremail = $_POST['visiteremail'];
@@ -52,7 +53,7 @@ if ($_GET["action"] == "checkIn") {
             <p>Phone: '.$visiterphoneNo.'</p>
             <p>CheckIn Time: '.$today.'</p>';
             $headers =  'MIME-Version: 1.0' . "\r\n"; 
-            $headers .= 'From: Your name <nitin10101999@gmail.com>' . "\r\n";
+            $headers .= 'From: Your name <'.$globalemail.'>' . "\r\n";
             $headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n"; 
             if (mail($to, $subject, $body, $headers)) {
                $error = "";
@@ -120,7 +121,7 @@ else if($_GET['action']=='checkOut'){
             <p>CheckOut Time: '.$today.'</p>
             <p>Host name: '.$hostname.'</p>';
     $headers =  'MIME-Version: 1.0' . "\r\n"; 
-    $headers .= 'From: Your name <nitin10101999@gmail.com>' . "\r\n";
+    $headers .= 'From: Your name <'$globalemail'>' . "\r\n";
     $headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n"; 
     if (mail($to, $subject, $body, $headers)) {
        echo 1;
