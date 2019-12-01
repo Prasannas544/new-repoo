@@ -5,7 +5,7 @@ Mysql database
 ## Changes to be made
 Use SMTP configuration for sending email
 
-change the Email Address in globalemail at line 5 in action.php
+Change the Email Address in globalemail at line 5 in action.php
 
 Create A database with "testdb" name
 
